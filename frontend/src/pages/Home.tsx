@@ -2,8 +2,13 @@ import React from 'react';
 import { ArrowRight, Leaf, Battery, Cpu, Recycle, TrendingUp, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
+import IndiaMapImage from '../vdo/img.png';
+import SustainabilityDiagram from '../vdo/img2.png';
 
 const Home = () => {
+  const upcomingCities = ['Bhopal', 'Indore', 'Raipur', 'Nagpur', 'Lucknow'];
+  const operationalCities = ['Mumbai', 'Pune', 'Bangalore', 'Hyderabad', 'Ahmedabad'];
+
   return (
     <div className="space-y-20 font-sans bg-black text-gray-100">
       {/* Hero Section */}
@@ -46,8 +51,138 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Presence Section */}
+      <section className="bg-black text-gray-100 py-10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-5xl font-bold mb-6">
+                Our <span className="text-green-600">Presence</span><br />
+                Across Nation
+              </h2>
+              <p className="text-gray-300 text-lg mb-8">
+                The EcoRecycle has established its services in {operationalCities.length} major cities of India and is now
+                expanding its reach in other parts of the country.
+              </p>
+              <div className="space-y-4">
+                <div className="flex flex-wrap gap-3">
+                  {operationalCities.map((city) => (
+                    <span
+                      key={city}
+                      className="px-4 py-2 bg-green-900/30 text-green-400 rounded-full border border-green-800"
+                    >
+                      {city}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {upcomingCities.map((city) => (
+                    <span
+                      key={city}
+                      className="px-4 py-2 bg-zinc-900 text-zinc-400 rounded-full border border-zinc-800 flex items-center"
+                    >
+                      {city}
+                      <span className="text-xs ml-2 text-amber-500">coming soon</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src={IndiaMapImage}
+                alt="India Map"
+                className="w-full opacity-100"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sustainability Section - Corrected */}
+      <section className="max-w-7xl mx-auto px-4 py-10">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src={SustainabilityDiagram}
+              alt="Sustainability Diagram"
+              className="w-3/4 mx-auto"
+            />
+          </div>
+          <div>
+            <p className="text-gray-400 mb-2">Our Eco-System Towards</p>
+            <h2 className="text-5xl font-bold mb-6">
+              Sustainability &<br />
+              Circular Economy
+            </h2>
+            <p className="text-gray-400 text-lg mb-6">
+              The EcoRecycle with its acute understanding of waste has developed
+              sustainable strategies & techniques to manage waste efficiently & cost-
+              efficaciously contributing in closing the loop of product life cycle & attain
+              <span className="text-green-500"> circular economy</span> while infusing <span className="text-green-500">sustainability</span> into lives.
+            </p>
+            <Link
+              to="/learn-more"
+              className="inline-flex items-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300"
+            >
+              Learn More
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Presence Section - Moving after Sustainability
+      <section className="bg-black text-gray-100 py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-5xl font-bold mb-6">
+                Our <span className="text-green-600">Presence</span><br />
+                Across Nation
+              </h2>
+              <p className="text-gray-300 text-lg mb-8">
+                The EcoRecycle has established its services in {operationalCities.length} major cities of India and is now
+                expanding its reach in other parts of the country.
+              </p>
+              <div className="space-y-4">
+                <div className="flex flex-wrap gap-3">
+                  {operationalCities.map((city) => (
+                    <span
+                      key={city}
+                      className="px-4 py-2 bg-green-900/30 text-green-400 rounded-full border border-green-800"
+                    >
+                      {city}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {upcomingCities.map((city) => (
+                    <span
+                      key={city}
+                      className="px-4 py-2 bg-zinc-900 text-zinc-400 rounded-full border border-zinc-800 flex items-center"
+                    >
+                      {city}
+                      <span className="text-xs ml-2 text-amber-500">coming soon</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src={IndiaMapImage}
+                alt="India Map"
+                className="w-full rounded-lg opacity-75"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+            </div>
+          </div>
+        </div>
+      </section> */}
       {/* How It Works */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
+      <section className="max-w-7xl mx-auto px-4 py-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-gray-100">How It Works</h2>
         <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
           Discover how easy it is to join our eco-friendly movement and start earning rewards.
@@ -72,7 +207,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Impact Stats */}
+      {/* Impact Stats
       <section className="bg-zinc-900 text-gray-100 py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Our Impact</h2>
@@ -90,10 +225,11 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
 
       {/* Accepted Items */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
+      <section className="max-w-7xl mx-auto px-4 py-8">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">Accepted Items</h2>
         <div className="grid md:grid-cols-4 gap-8">
           {[

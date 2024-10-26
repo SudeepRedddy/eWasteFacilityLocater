@@ -48,13 +48,13 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link 
               to="/" 
-              className="text-white px-4 py-2 rounded-lg hover:bg-white/20 transition-all duration-300"
+              className="text-white px-4 py-2 rounded-lg hover:bg-green-400/35 transition-all duration-300"
             >
               Home
             </Link>
             <Link 
               to="/centers" 
-              className="flex items-center space-x-1 text-white px-4 py-2 rounded-lg hover:bg-white/20 transition-all duration-300"
+              className="flex items-center space-x-1 text-white px-4 py-2 rounded-lg hover:bg-green-400/35 transition-all duration-300"
             >
               <MapPin className="h-4 w-4" />
               <span>Recycling Centers</span>
@@ -63,7 +63,7 @@ const Navbar = () => {
               <div className="flex items-center space-x-4">
                 <Link 
                   to={`/dashboard/${user.type}`}
-                  className="flex items-center space-x-2 text-white px-4 py-2 rounded-lg hover:bg-white/20 transition-all duration-300"
+                  className="flex items-center space-x-2 text-white px-4 py-2 rounded-lg hover:bg-green-400/35 transition-all duration-300"
                 >
                   <User className="h-4 w-4" />
                   <span>{user.name}</span>
@@ -72,7 +72,7 @@ const Navbar = () => {
                   variant="outline"
                   size="sm"
                   onClick={logout}
-                  className="border-white text-white hover:bg-white hover:text-black transition-all duration-300 rounded-lg"
+                  className="border-white text-white hover:bg-green-400/20 transition-all duration-300 rounded-lg"
                 >
                   <LogOut className="h-4 w-4 mr-1" />
                   Logout
@@ -81,7 +81,7 @@ const Navbar = () => {
             ) : (
               <Link 
                 to="/login"
-                className="flex items-center space-x-1 text-white px-4 py-2 rounded-lg hover:bg-white/20 transition-all duration-300"
+                className="flex items-center space-x-1 text-white px-4 py-2 rounded-lg hover:bg-green-400/20 transition-all duration-300"
               >
                 <LogIn className="h-4 w-4" />
                 <span>Login</span>
@@ -91,7 +91,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white hover:bg-white/20 p-2 rounded-lg transition-all duration-300"
+            className="md:hidden text-white hover:bg-green-400/20 p-2 rounded-lg transition-all duration-300"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <Menu className="h-6 w-6" />
@@ -105,14 +105,14 @@ const Navbar = () => {
           <div className="flex flex-col items-center space-y-4 py-4">
             <Link 
               to="/" 
-              className="text-white w-full text-center px-4 py-2 hover:bg-white/20 transition-all duration-300"
+              className="text-white w-full text-center px-4 py-2 hover:bg-green-400/20 transition-all duration-300"
               onClick={() => setMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               to="/centers" 
-              className="flex items-center justify-center space-x-1 text-white w-full px-4 py-2 hover:bg-white/20 transition-all duration-300"
+              className="flex items-center justify-center space-x-1 text-white w-full px-4 py-2 hover:bg-green-400/20 transition-all duration-300"
               onClick={() => setMenuOpen(false)}
             >
               <MapPin className="h-4 w-4" />
@@ -122,7 +122,7 @@ const Navbar = () => {
               <div className="flex flex-col items-center space-y-4 w-full">
                 <Link 
                   to={`/dashboard/${user.type}`}
-                  className="flex items-center justify-center space-x-2 text-white w-full px-4 py-2 hover:bg-white/20 transition-all duration-300"
+                  className="flex items-center justify-center space-x-2 text-white w-full px-4 py-2 hover:bg-green-400/20 transition-all duration-300"
                   onClick={() => setMenuOpen(false)}
                 >
                   <User className="h-4 w-4" />
@@ -135,7 +135,7 @@ const Navbar = () => {
                     logout();
                     setMenuOpen(false);
                   }}
-                  className="border-white text-white hover:bg-white hover:text-black transition-all duration-300 w-3/4"
+                  className="border-white text-white hover:bg-green-400/20 transition-all duration-300 w-3/4"
                 >
                   <LogOut className="h-4 w-4 mr-1" />
                   Logout
@@ -144,7 +144,7 @@ const Navbar = () => {
             ) : (
               <Link 
                 to="/login"
-                className="flex items-center justify-center space-x-1 text-white w-full px-4 py-2 hover:bg-white/20 transition-all duration-300"
+                className="flex items-center justify-center space-x-1 text-white w-full px-4 py-2 hover:bg-green-400/20 transition-all duration-300"
                 onClick={() => setMenuOpen(false)}
               >
                 <LogIn className="h-4 w-4" />

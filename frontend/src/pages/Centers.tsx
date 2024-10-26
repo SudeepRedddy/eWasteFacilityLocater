@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { MapPin } from 'lucide-react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import Button from '../components/Button';
-import Input from '../components/Input';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -14,28 +13,119 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-// Sample recycling centers data
+// Centers data
 const centers = [
-  { id: 1, name: 'EcoRecycle Center', lat: 40.7128, lng: -74.0060, address: '123 Green St, NY' },
-  { id: 2, name: 'GreenTech Recycling', lat: 40.7300, lng: -73.9950, address: '456 Earth Ave, NY' },
-  { id: 3, name: 'E-Waste Solutions', lat: 40.7200, lng: -74.0100, address: '789 Eco Blvd, NY' },
+  // Hyderabad
+  { id: 6, name: 'Transducers & Controls Pvt Ltd', lat: 17.385044, lng: 78.486671, address: 'Balanagar, Hyderabad' },
+  { id: 7, name: 'Vsn Technologies', lat: 17.467954, lng: 78.442932, address: 'Balanagar, Hyderabad' },
+  { id: 8, name: 'Hyderabad Flextech Ltd.', lat: 17.469199, lng: 78.442063, address: 'Balanagar, Hyderabad' },
+  { id: 9, name: 'Agrogen India', lat: 17.471374, lng: 78.443779, address: 'Balanagar, Hyderabad' },
+  { id: 10, name: 'C.B. Enterprises', lat: 17.446955, lng: 78.450759, address: 'Balkampet, Hyderabad' },
+  { id: 11, name: 'Yamuna Digital Electronics Pvt. Ltd.', lat: 17.417254, lng: 78.449584, address: 'Banjara Hills, Hyderabad' },
+  { id: 12, name: 'Scalemaster Adlam Pvt Ltd.', lat: 17.525591, lng: 78.484317, address: 'Basheerbagh, Hyderabad' },
+  { id: 13, name: 'Linkwell Telesystems Pvt. Ltd.', lat: 17.444714, lng: 78.462591, address: 'Begumpet, Hyderabad' },
+  { id: 14, name: 'Twin Data Systems Pvt. Ltd.', lat: 17.445243, lng: 78.464401, address: 'Begumpet, Hyderabad' },
+  { id: 15, name: 'Sulakshana Circuits Ltd.', lat: 17.546291, lng: 78.356851, address: 'Bollaram, Hyderabad' },
+  { id: 16, name: 'Concept Shapers & Electronics', lat: 17.469255, lng: 78.598628, address: 'Cherlapalli, Hyderabad' },
+  { id: 17, name: 'Cygnus Microsystems (P) Ltd', lat: 17.466566, lng: 78.442155, address: 'Cherlapalli, Hyderabad' },
+  { id: 18, name: 'Nucleonix Systems Pvt. Ltd.', lat: 17.470671, lng: 78.605935, address: 'Cherlapalli, Hyderabad' },
+  { id: 19, name: 'Vr Electronics', lat: 17.473723, lng: 78.569013, address: 'Cherlapalli, Hyderabad' },
+  { id: 20, name: 'Cal – On Instruments', lat: 17.462985, lng: 78.609425, address: 'Cherlapalli, Hyderabad' },
+  
+  // J&K
+  { id: 21, name: 'Zubair Recycling Center', lat: 34.0231489, lng: 72.6185282, address: 'J&K' },
+  { id: 22, name: 'SEHRAN Recycle Company', lat: 34.0231489, lng: 72.6185282, address: 'J&K' },
+  
+  // Himachal Pradesh
+  { id: 31, name: 'E-waste recycling company in Baddi', lat: 30.957827, lng: 76.264035, address: 'Baddi, Himachal Pradesh' },
+  
+  // Andhra Pradesh
+  { id: 41, name: 'WORLD SCRAP RECYCLING SOLUTIONS PVT. LTD', lat: 13.6317452, lng: 78.9571175, address: 'Andhra Pradesh' },
+  { id: 42, name: 'Re Sustainability and Recycling Private Limited', lat: 17.6458865, lng: 82.5546299, address: 'Andhra Pradesh' },
+  
+  // Arunachal Pradesh
+  { id: 51, name: 'RRR Centre Pasighat', lat: 28.0430156, lng: 95.2049344, address: 'Pasighat, Arunachal Pradesh' },
+  
+  // Assam
+  { id: 61, name: 'AXOM Refurbisher', lat: 26.2563766, lng: 91.5217502, address: 'Assam' },
+  
+  // Bihar
+  { id: 71, name: 'Recycling Bazar', lat: 25.6080374, lng: 76.705543, address: 'Bihar' },
+  
+  // Chhattisgarh
+  { id: 81, name: 'Wastech India', lat: 21.2577275, lng: 81.3977962, address: 'Chhattisgarh' },
+  
+  // Goa
+  { id: 91, name: 'Global E-Waste Management System', lat: 15.4035061, lng: 73.7367643, address: 'Goa' },
+  
+  // Gujarat
+  { id: 101, name: 'Waste Wala Corporation', lat: 22.2829777, lng: 68.6647498, address: 'Gujarat' },
+  
+  // Haryana
+  { id: 111, name: 'Reload Digital India E-Waste Recycling', lat: 28.4498734, lng: 76.3673827, address: 'Haryana' },
+  
+  // Jharkhand
+  { id: 121, name: 'E-Waste Recyclers India', lat: 28.581155, lng: 77.1977297, address: 'Jharkhand' },
+  
+  // Karnataka
+  { id: 131, name: 'Best E-waste Recyclers private limited', lat: 13.5067076, lng: 76.5083035, address: 'Karnataka' },
 ];
+
+// Function to calculate Haversine distance in km
+const haversineDistance = (coords1, coords2) => {
+  const [lat1, lon1] = coords1;
+  const [lat2, lon2] = coords2;
+  const toRad = (angle) => (Math.PI / 180) * angle;
+  const R = 6371; // Earth radius in km
+
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+  return R * c; // Distance in km
+};
 
 const Centers = () => {
   const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
-  const [searchLocation, setSearchLocation] = useState('');
+  const [topFiveCenters, setTopFiveCenters] = useState([]);
 
   useEffect(() => {
-    // Request user's location
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          setUserLocation([position.coords.latitude, position.coords.longitude]);
+          const location = [position.coords.latitude, position.coords.longitude];
+          setUserLocation(location);
+
+          // Calculate distances and get the top 5 nearest centers
+          const nearestCenters = centers
+            .map((center) => ({
+              ...center,
+              distance: haversineDistance(location, [center.lat, center.lng]),
+            }))
+            .sort((a, b) => a.distance - b.distance)
+            .slice(0, 5); // Take top 5 closest centers
+
+          setTopFiveCenters(nearestCenters);
         },
         (error) => {
           console.error('Error getting location:', error);
-          // Default to New York City coordinates if location access is denied
-          setUserLocation([40.7128, -74.0060]);
+          const defaultLocation = [17.385044, 78.486671]; // Default to Hyderabad
+          setUserLocation(defaultLocation);
+
+          const nearestCenters = centers
+            .map((center) => ({
+              ...center,
+              distance: haversineDistance(defaultLocation, [center.lat, center.lng]),
+            }))
+            .sort((a, b) => a.distance - b.distance)
+            .slice(0, 5);
+
+          setTopFiveCenters(nearestCenters);
         }
       );
     }
@@ -43,77 +133,75 @@ const Centers = () => {
 
   if (!userLocation) {
     return (
-      <div className="min-h-[calc(100vh-64px)] flex items-center justify-center">
-        <p className="text-gray-600">Loading map...</p>
+      <div className="min-h-[calc(100vh-64px)] flex items-center justify-center bg-black">
+        <p className="text-gray-400">Loading map...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-[calc(100vh-64px)]">
-      <div className="bg-white shadow">
+    <div className="pt-16 min-h-[calc(100vh-64px)] bg-black text-white">
+      <div className="bg-black shadow-md border-b border-gray-700">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-gray-900">Recycling Centers</h1>
-          <p className="mt-2 text-gray-600">Find e-waste recycling centers near you</p>
+          <h1 className="text-3xl font-bold text-white">Recycling Centers</h1>
+          <p className="mt-2 text-gray-400">Find e-waste recycling centers near you</p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-6">
-        <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-          <div className="flex items-center space-x-4">
-            <Input
-              label=""
-              type="text"
-              value={searchLocation}
-              onChange={(e) => setSearchLocation(e.target.value)}
-              placeholder="Enter your location"
-              className="flex-1"
-            />
-            <Button>
-              <MapPin className="h-4 w-4 mr-2" />
-              Search
-            </Button>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="md:col-span-2">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden h-[600px]">
-              <MapContainer
-                center={userLocation}
-                zoom={13}
-                style={{ height: '100%', width: '100%' }}
-              >
-                <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                />
-                {centers.map((center) => (
-                  <Marker key={center.id} position={[center.lat, center.lng]}>
-                    <Popup>
-                      <div className="p-2">
-                        <h3 className="font-semibold">{center.name}</h3>
-                        <p className="text-sm text-gray-600">{center.address}</p>
-                        <Button size="sm" className="mt-2">Schedule Pickup</Button>
-                      </div>
-                    </Popup>
-                  </Marker>
-                ))}
-              </MapContainer>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            {centers.map((center) => (
-              <div key={center.id} className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition">
-                <h3 className="font-semibold">{center.name}</h3>
-                <p className="text-sm text-gray-600 mb-3">{center.address}</p>
-                <div className="flex space-x-2">
-                  <Button size="sm" variant="outline">Get Directions</Button>
-                  <Button size="sm">Schedule Pickup</Button>
-                </div>
+        <div className="bg-black rounded-lg shadow-md p-4 mb-6 border border-gray-700">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="md:col-span-2">
+              <div className="bg-black rounded-lg shadow-md overflow-hidden h-[600px] border border-gray-700">
+                <MapContainer
+                  center={userLocation}
+                  zoom={13}
+                  style={{ height: '100%', width: '100%' }}
+                >
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  />
+                  {centers.map((center) => (
+                    <Marker key={center.id} position={[center.lat, center.lng]}>
+                      <Popup>
+                        <div className="p-2 text-gray-800">
+                          <h3 className="font-semibold">{center.name}</h3>
+                          <p className="text-sm text-gray-600">{center.address}</p>
+                          <Button size="sm" className="mt-2 bg-green-600 text-white hover:bg-green-700">
+                            Schedule Pickup
+                          </Button>
+                        </div>
+                      </Popup>
+                    </Marker>
+                  ))}
+                </MapContainer>
               </div>
-            ))}
+            </div>
+
+            <div className="space-y-4">
+              {topFiveCenters.map((center) => (
+                <div key={center.id} className="bg-black p-4 rounded-lg shadow-md hover:shadow-lg transition border border-gray-700">
+                  <h3 className="font-semibold text-white">{center.name}</h3>
+                  <p className="text-sm text-gray-400 mb-3">{center.address}</p>
+                  <p className="text-xs text-gray-500">Distance: {center.distance.toFixed(2)} km</p>
+                  <div className="flex space-x-2">
+                    <a
+                      href={`https://www.google.com/maps/dir/?api=1&destination=${center.lat},${center.lng}${userLocation ? `&origin=${userLocation[0]},${userLocation[1]}` : ''}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button size="sm" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800">
+                        Get Directions
+                      </Button>
+                    </a>
+                    <Button size="sm" className="bg-green-600 text-white hover:bg-green-700">
+                      Schedule Pickup
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
