@@ -40,16 +40,16 @@ const UserLogin = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center bg-gray-50 py-12 px-4">
-      <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center bg-black py-12 px-4">
+      <div className="max-w-md w-full space-y-8 bg-[#121212] p-8 rounded-xl shadow-lg">
         <div className="text-center">
           <div className="flex justify-center">
-            <User className="h-12 w-12 text-green-600" />
+            <User className="h-12 w-12 text-green-500" />
           </div>
-          <h2 className="mt-4 text-3xl font-bold text-gray-900">
+          <h2 className="mt-4 text-3xl font-bold text-white">
             {isLogin ? 'Welcome Back' : 'Create Account'}
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-gray-400">
             {isLogin ? 'Sign in to your account' : 'Register as a new user'}
           </p>
         </div>
@@ -65,6 +65,7 @@ const UserLogin = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="John Doe"
+                className="bg-[#121212] text-white placeholder-gray-1000"
               />
               <Input
                 label="Phone"
@@ -73,8 +74,8 @@ const UserLogin = () => {
                 required
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="+1234567890"
-                className="mt-4" // Ensure spacing is equal to other fields
+                placeholder="+91 9999999999"
+                className="mt-4 bg-[#121212] text-white placeholder-gray-500" // Ensure spacing is equal to other fields
               />
             </>
           )}
@@ -87,6 +88,7 @@ const UserLogin = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder="you@example.com"
+            className="bg-[#121212] text-white placeholder-gray-500"
           />
           
           <Input
@@ -97,9 +99,10 @@ const UserLogin = () => {
             value={formData.password}
             onChange={handleChange}
             placeholder="••••••••"
+            className="bg-[#121212] text-white placeholder-gray-500"
           />
 
-          <Button className="w-full" disabled={loading}>
+          <Button className="w-full bg-green-600 hover:bg-green-500" disabled={loading}>
             {loading ? (
               <Loader2 className="h-4 w-4 animate-spin mr-2" />
             ) : null}
@@ -111,7 +114,7 @@ const UserLogin = () => {
           <button
             type="button"
             onClick={() => setIsLogin(!isLogin)}
-            className="text-green-600 hover:text-green-700 text-sm font-medium"
+            className="text-green-500 hover:text-green-400 text-sm font-medium"
           >
             {isLogin ? "Don't have an account? Sign up" : 'Already have an account? Sign in'}
           </button>
@@ -119,7 +122,7 @@ const UserLogin = () => {
 
         <Link
           to="/login"
-          className="flex items-center justify-center text-sm text-gray-600 hover:text-gray-800"
+          className="flex items-center justify-center text-sm text-gray-400 hover:text-gray-300"
         >
           <ArrowLeft className="h-4 w-4 mr-1" />
           Back to account type selection

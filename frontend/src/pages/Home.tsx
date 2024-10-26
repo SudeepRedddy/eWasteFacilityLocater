@@ -257,10 +257,15 @@ const Home = () => {
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
             Join our community and make a difference today!
           </p>
-          <Button size="lg" className="bg-green-600 text-gray-100 hover:bg-green-700 transition-transform transform hover:scale-105 duration-300 ease-in-out shadow-lg">
-            Get Started Now
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/login">
+            <Button
+              size="lg"
+              className="bg-green-600 text-gray-100 hover:bg-green-700 transition-transform transform hover:scale-105 duration-300 ease-in-out shadow-lg"
+            >
+              Get Started Now
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

@@ -27,22 +27,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Mock validation
-      if (email === 'demo@example.com' && password === 'password') {
-        const user = {
-          id: '1',
-          email,
-          name: type === 'user' ? 'John Doe' : 'EcoRecycle Solutions',
-          type
-        };
-        setUser(user);
-        toast.success('Successfully logged in!');
-        navigate(type === 'user' ? '/dashboard/user' : '/dashboard/business');
-      } else {
-        throw new Error('Invalid credentials');
-      }
+      // Assuming successful login
+      const user = {
+        id: '1',
+        email,
+        name: type === 'user' ? 'John Doe' : 'EcoRecycle Solutions',
+        type
+      };
+      setUser(user);
+      toast.success('Successfully logged in!');
+      navigate(type === 'user' ? '/dashboard/user' : '/dashboard/business');
     } catch (error) {
-      toast.error('Invalid email or password');
+      toast.error('An error occurred during login');
       throw error;
     }
   }, [navigate]);

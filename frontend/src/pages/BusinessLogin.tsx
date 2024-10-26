@@ -43,16 +43,16 @@ const BusinessLogin = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center bg-gray-50 py-12 px-4">
-      <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center bg-black py-12 px-4">
+      <div className="max-w-md w-full space-y-8 bg-[#121212] p-8 rounded-xl shadow-lg">
         <div className="text-center">
           <div className="flex justify-center">
-            <Building2 className="h-12 w-12 text-green-600" />
+            <Building2 className="h-12 w-12 text-green-400" />
           </div>
-          <h2 className="mt-4 text-3xl font-bold text-gray-900">
+          <h2 className="mt-4 text-3xl font-bold text-white">
             {isLogin ? 'Business Login' : 'Register Business'}
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-gray-300">
             {isLogin ? 'Access your recycling center dashboard' : 'Register your recycling center'}
           </p>
         </div>
@@ -68,6 +68,7 @@ const BusinessLogin = () => {
                 value={formData.businessName}
                 onChange={handleChange}
                 placeholder="Eco Recycling Solutions"
+                className="bg-[#121212] text-white placeholder-gray-500 border border-gray-700"
               />
               <Input
                 label="Business Address"
@@ -77,6 +78,7 @@ const BusinessLogin = () => {
                 value={formData.address}
                 onChange={handleChange}
                 placeholder="123 Green Street"
+                className="bg-[#121212] text-white placeholder-gray-500 border border-gray-700"
               />
               <div className="grid grid-cols-2 gap-4">
                 <Input
@@ -88,6 +90,7 @@ const BusinessLogin = () => {
                   value={formData.latitude}
                   onChange={handleChange}
                   placeholder="40.7128"
+                  className="bg-[#121212] text-white placeholder-gray-500 border border-gray-700"
                 />
                 <Input
                   label="Longitude"
@@ -98,6 +101,7 @@ const BusinessLogin = () => {
                   value={formData.longitude}
                   onChange={handleChange}
                   placeholder="-74.0060"
+                  className="bg-[#121212] text-white placeholder-gray-500 border border-gray-700"
                 />
               </div>
               <Input
@@ -108,6 +112,7 @@ const BusinessLogin = () => {
                 value={formData.acceptedItems}
                 onChange={handleChange}
                 placeholder="Electronics, Batteries, etc."
+                className="bg-[#121212] text-white placeholder-gray-500 border border-gray-700"
               />
             </>
           )}
@@ -120,6 +125,7 @@ const BusinessLogin = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder="business@example.com"
+            className="bg-[#121212] text-white placeholder-gray-500 border border-gray-700"
           />
           
           <Input
@@ -130,9 +136,10 @@ const BusinessLogin = () => {
             value={formData.password}
             onChange={handleChange}
             placeholder="••••••••"
+            className="bg-[#121212] text-white placeholder-gray-500 border border-gray-700"
           />
 
-          <Button className="w-full" disabled={loading}>
+          <Button className="w-full bg-green-600 hover:bg-green-500 text-white" disabled={loading}>
             {loading ? (
               <Loader2 className="h-4 w-4 animate-spin mr-2" />
             ) : null}
@@ -144,7 +151,7 @@ const BusinessLogin = () => {
           <button
             type="button"
             onClick={() => setIsLogin(!isLogin)}
-            className="text-green-600 hover:text-green-700 text-sm font-medium"
+            className="text-green-400 hover:text-green-300 text-sm font-medium"
           >
             {isLogin ? "Don't have an account? Register" : 'Already registered? Sign in'}
           </button>
@@ -152,7 +159,7 @@ const BusinessLogin = () => {
 
         <Link
           to="/login"
-          className="flex items-center justify-center text-sm text-gray-600 hover:text-gray-800"
+          className="flex items-center justify-center text-sm text-gray-400 hover:text-gray-300"
         >
           <ArrowLeft className="h-4 w-4 mr-1" />
           Back to account type selection

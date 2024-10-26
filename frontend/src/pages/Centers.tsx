@@ -108,7 +108,7 @@ const Centers = () => {
               distance: haversineDistance(location, [center.lat, center.lng]),
             }))
             .sort((a, b) => a.distance - b.distance)
-            .slice(0, 5); // Take top 5 closest centers
+            .slice(0, 4); // Take top 5 closest centers
 
           setTopFiveCenters(nearestCenters);
         },
