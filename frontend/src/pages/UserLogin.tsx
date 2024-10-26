@@ -13,8 +13,7 @@ const UserLogin = () => {
     email: '',
     password: '',
     name: '',
-    phone: '',
-    postalCode: ''
+    phone: ''
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -67,26 +66,16 @@ const UserLogin = () => {
                 onChange={handleChange}
                 placeholder="John Doe"
               />
-              <div className="grid grid-cols-2 gap-4">
-                <Input
-                  label="Phone"
-                  name="phone"
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="+1234567890"
-                />
-                <Input
-                  label="Postal Code"
-                  name="postalCode"
-                  type="text"
-                  required
-                  value={formData.postalCode}
-                  onChange={handleChange}
-                  placeholder="12345"
-                />
-              </div>
+              <Input
+                label="Phone"
+                name="phone"
+                type="tel"
+                required
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="+1234567890"
+                className="mt-4" // Ensure spacing is equal to other fields
+              />
             </>
           )}
           
