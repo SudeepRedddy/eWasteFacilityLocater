@@ -1,7 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Award, Package, Clock, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
+
+// Custom hook for number animation
+const useCountAnimation = (end, duration = 2000, start = 0) => {
+  const [count, setCount] = useState(start);
+  
+  useEffect(() => {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+      setCount(Math.floor(progress * (end - start) + start));
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    
+    window.requestAnimationFrame(step);
+  }, [end, duration, start]);
+  
+  return count;
+};
+
+// Animated stat card component
+const StatCard = ({ icon: Icon, title, value, color, onClick }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const animatedValue = useCountAnimation(isVisible ? value : 0, 2000);
+  
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  return (
+    <div
+      className="bg-zinc-900 p-6 rounded-xl shadow-md cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
+      onClick={onClick}
+    >
+      <Icon className={`h-8 w-8 ${color} mb-4 transition-transform hover:rotate-12`} />
+      <h3 className="text-lg font-semibold mb-2">{title}</h3>
+      <p className={`text-3xl font-bold ${color}`}>
+        {animatedValue.toLocaleString()}
+      </p>
+    </div>
+  );
+};
 
 const UserDashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,6 +72,30 @@ const UserDashboard = () => {
     document.getElementById('recent-activity').scrollIntoView({ behavior: 'smooth' });
   };
 
+  const stats = [
+    {
+      icon: Award,
+      title: "Eco Points",
+      value: 1250,
+      color: "text-green-400",
+      onClick: openModal
+    },
+    {
+      icon: Package,
+      title: "Items Recycled",
+      value: 27,
+      color: "text-blue-400",
+      onClick: scrollToRecentActivity
+    },
+    {
+      icon: Clock,
+      title: "Pending Pickups",
+      value: 2,
+      color: "text-purple-400",
+      onClick: () => {}
+    }
+  ];
+
   return (
     <div className="min-h-[calc(100vh-64px)] pt-16 bg-black text-white">
       <div className="bg-zinc-900 shadow">
@@ -37,31 +107,16 @@ const UserDashboard = () => {
 
       <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div
-            className="bg-zinc-900 p-6 rounded-xl shadow-md cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
-            onClick={openModal}
-          >
-            <Award className="h-8 w-8 text-green-400 mb-4 transition-transform hover:rotate-12" />
-            <h3 className="text-lg font-semibold mb-2">Eco Points</h3>
-            <p className="text-3xl font-bold text-green-400">1,250</p>
-          </div>
-
-          <div
-            className="bg-zinc-900 p-6 rounded-xl shadow-md cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
-            onClick={scrollToRecentActivity}
-          >
-            <Package className="h-8 w-8 text-blue-400 mb-4 transition-transform hover:rotate-12" />
-            <h3 className="text-lg font-semibold mb-2">Items Recycled</h3>
-            <p className="text-3xl font-bold text-blue-400">27</p>
-          </div>
-
-          <div
-            className="bg-zinc-900 p-6 rounded-xl shadow-md cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
-          >
-            <Clock className="h-8 w-8 text-purple-400 mb-4 transition-transform hover:rotate-12" />
-            <h3 className="text-lg font-semibold mb-2">Pending Pickups</h3>
-            <p className="text-3xl font-bold text-purple-400">2</p>
-          </div>
+          {stats.map((stat, index) => (
+            <StatCard
+              key={index}
+              icon={stat.icon}
+              title={stat.title}
+              value={stat.value}
+              color={stat.color}
+              onClick={stat.onClick}
+            />
+          ))}
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
