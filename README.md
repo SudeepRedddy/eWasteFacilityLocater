@@ -23,7 +23,7 @@ To set up the project locally, follow these steps:
 1. **Download and unzip the file** or clone the repository.
    
    ```bash
-   git clone (https://github.com/SudeepRedddy/eWasteFacilityLocater.git)
+   git clone https://github.com/SudeepRedddy/eWasteFacilityLocater.git
    ```
 
 2. **Navigate to the frontend directory**:
