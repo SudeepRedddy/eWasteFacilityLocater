@@ -12,6 +12,7 @@ import UserDashboard from './pages/UserDashboard';
 import BusinessDashboard from './pages/BusinessDashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import ContactUs from './components/ContactUs';
+import WasteP from './components/WasteP';
 
 function AppContent() {
   return (
@@ -24,6 +25,7 @@ function AppContent() {
         <Route path="/login/user" element={<UserLogin />} />
         <Route path="/login/business" element={<BusinessLogin />} />
         <Route path="/contact" element={<ContactUs/>}/>
+        <Route path="/waste" element={<WasteP/>}/>
         <Route
           path="/dashboard/user"
           element={

@@ -145,7 +145,7 @@ const Home = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Know Your Waste */}
-          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
             <img
               src="https://www.thekabadiwala.com/images/individual/plant.webp"
               alt="Know Your Waste"
@@ -156,7 +156,7 @@ const Home = () => {
               <p className="text-gray-400 text-sm text-justify">
                 Each waste type has to be segregated at source to enable its right disposal so that a circular economy can be formed. Click the button below to know about your waste & also recycle the waste according to the norms.
               </p>
-              <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
+              <Link to="/waste" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -165,7 +165,7 @@ const Home = () => {
 
 
           {/* Scrap Collection */}
-          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
             <img
               src="https://img.freepik.com/free-vector/people-loading-garbage-into-truck-trash-pickup-with-recycling-sign-flat-vector-illustration-garbage-disposal-volunteering-trash-collection_74855-13197.jpg"
               alt="Scrap Collection"
@@ -177,7 +177,7 @@ const Home = () => {
               Sell your scrap in just few clicks!<br></br>
               In this evolving technological world, let your kabaad find a kabadiwala, ONLINE!
               Raise a request from the comfort of your home with the website & shedule pickup.              </p>
-              <Link to="/blog/mattress-journey" className="inline-flex items-center text-[#3c9c1c] mt-4">
+              <Link to="/waste" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -185,7 +185,7 @@ const Home = () => {
           </div>
 
           {/* Tree Plantation Initiative */}
-          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
             <img
               src="https://cbx-prod.b-cdn.net/COLOURBOX59244512.jpg?width=800&height=800&quality=70"
               alt="Tree Plantation Initiative"
@@ -195,7 +195,7 @@ const Home = () => {
               <h3 className="text-xl font-semibold mb-3">Tree Plantation Initiative</h3>
               <p className="text-gray-400 text-sm">
                 In the next two years, let's commit to planting as many trees as possible to restore balance to our planet. Every tree planted contributes to cleaner air. Together, we can make a lasting impact let's start today!              </p>
-              <Link to="/blog/tree-plantation" className="inline-flex items-center text-[#3c9c1c] mt-4">
+              <Link to="/waste" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -213,7 +213,7 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Contact Us */}
-          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
             <img
               src="https://media.istockphoto.com/id/1448184041/vector/abstract-character-concept.jpg?s=612x612&w=0&k=20&c=6P1KMHQKIyvqa0ahiFn_kvRt_Hgkj-L5rUbEFu4PjtY="
               alt="Tetra Pak Initiative"
@@ -223,7 +223,7 @@ const Home = () => {
               <h3 className="text-xl font-semibold mb-3">Contact Us</h3>
               <p className="text-gray-400 text-sm text-justify">
               For any inquiries, contact EcoRecycle via our website or customer support. We're here to assist with all your e-waste recycling needs, ensure a seamless experience, and support a greener future.              </p>
-              <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
+              <Link to="/contact" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -231,7 +231,7 @@ const Home = () => {
           </div>
 
           {/* Privacy Policy */}
-          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
             <img
               src="https://cdni.iconscout.com/illustration/premium/thumb/woman-throwing-battery-into-recycle-bin-illustration-download-in-svg-png-gif-file-formats--garbage-disposal-ecology-conservation-industries-pack-industry-illustrations-3921107.png?f=webp"
               alt="Privacy Policy"
@@ -243,7 +243,7 @@ const Home = () => {
                 EcoRecycle enables e-waste recycling while protecting your personal information. Our Privacy Policy applies to all services. By using EcoRecycle, you consent to this policy and agree to our terms.
               <br />
               </p>
-              <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
+              <Link to="/contact" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -251,7 +251,7 @@ const Home = () => {
           </div>
 
           {/* Terms & Conditions */}
-          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
             <img
               src="https://www.skvewasterecycling.com/assets/img/terms.png"
               alt="Terms & Conditions"
@@ -261,7 +261,7 @@ const Home = () => {
               <h3 className="text-xl font-semibold mb-3">Terms & Conditions</h3>
               <p className="text-gray-400 text-sm text-justify">
                 Please read the terms and condition carefully which is located on the website.The term will have an overriding effect. This agreement sets out the legally binding agreement between the user of the website and The EcoRecycle.</p>
-              <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
+              <Link to="/contact" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

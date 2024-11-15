@@ -10,9 +10,9 @@ const Footer = () => {
                     <div>
                         <h3 className="text-[#3c9c1c] text-lg font-semibold mb-4">Sustainability</h3>
                         <ul className="space-y-2">
-                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Know your Waste</Link></li>
-                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Scrap Collection</Link></li>
-                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Tree Plantation Initiative</Link></li>
+                            <li><Link to="/waste" className="text-gray-300 hover:text-[#3c9c1c]">Know your Waste</Link></li>
+                            <li><Link to="/waste" className="text-gray-300 hover:text-[#3c9c1c]">Scrap Collection</Link></li>
+                            <li><Link to="/waste" className="text-gray-300 hover:text-[#3c9c1c]">Tree Plantation Initiative</Link></li>
                         </ul>
                     </div>
 
@@ -20,9 +20,9 @@ const Footer = () => {
                     <div>
                         <h3 className="text-[#3c9c1c] text-lg font-semibold mb-4">Individuals</h3>
                         <ul className="space-y-2">
-                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Scrap Collection</Link></li>
-                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Vehicle Scrapping</Link></li>
-                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Zero Waste Society</Link></li>
+                            <li><Link to="/centers" className="text-gray-300 hover:text-[#3c9c1c]">Scrap Collection</Link></li>
+                            <li><Link to="/centers" className="text-gray-300 hover:text-[#3c9c1c]">Vehicle Scrapping</Link></li>
+                            <li><Link to="/centers" className="text-gray-300 hover:text-[#3c9c1c]">Zero Waste Society</Link></li>
                         </ul>
                     </div>
 
