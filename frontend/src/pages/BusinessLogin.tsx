@@ -59,7 +59,7 @@ const BusinessLogin = () => {
       <div className="max-w-md w-full space-y-8 bg-[#121212] p-8 rounded-xl shadow-lg">
         <div className="text-center">
           <div className="flex justify-center">
-            <Building2 className="h-12 w-12 text-green-400" />
+            <Building2 className="h-12 w-12 text-[#3c9c1c]" />
           </div>
           <h2 className="mt-4 text-3xl font-bold text-white">
             {isLogin ? 'Business Login' : 'Register Business'}
@@ -73,7 +73,7 @@ const BusinessLogin = () => {
           <Button
             onClick={handleGoogleLogin}
             disabled={loading}
-            className="w-full bg-white hover:bg-gray-100 text-zinc-900 font-semibold border border-gray-300"
+            className="w-full bg-white hover:bg-[#3c9c1c]/60 text-zinc-900 font-semibold border border-gray-300"
           >
             <div className="flex items-center justify-center">
               <svg className="h-5 w-5 mr-2" viewBox="0 0 24 24">
@@ -190,7 +190,7 @@ const BusinessLogin = () => {
               className="bg-[#121212] text-white placeholder-gray-500 border border-gray-700"
             />
 
-            <Button className="w-full bg-green-600 hover:bg-green-500 text-white" disabled={loading}>
+            <Button className="w-full bg-[#3c9c1c] hover:bg-[#3c9c1c] text-white" disabled={loading}>
               {loading ? (
                 <Loader2 className="h-4 w-4 animate-spin mr-2" />
               ) : null}
@@ -203,7 +203,7 @@ const BusinessLogin = () => {
           <button
             type="button"
             onClick={() => setIsLogin(!isLogin)}
-            className="text-green-400 hover:text-green-300 text-sm font-medium"
+            className="text-[#3c9c1c] hover:text-[#3c9c1c] text-sm font-medium"
           >
             {isLogin ? "Don't have an account? Register" : 'Already registered? Sign in'}
           </button>

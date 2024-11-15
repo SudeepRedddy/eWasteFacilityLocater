@@ -169,7 +169,7 @@ const Centers = () => {
                         <div className="p-2 text-gray-800">
                           <h3 className="font-semibold">{center.name}</h3>
                           <p className="text-sm text-gray-600">{center.address}</p>
-                          <Button size="sm" className="mt-2 bg-green-600 text-white hover:bg-green-700">
+                          <Button size="sm" className="mt-2 bg-[#3c9c1c] text-white hover:bg-[#3c9c1c]">
                             Schedule Pickup
                           </Button>
                         </div>
@@ -196,7 +196,7 @@ const Centers = () => {
                         Get Directions
                       </Button>
                     </a>
-                    <Button size="sm" className="bg-green-600 text-white hover:bg-green-700">
+                    <Button size="sm" className="bg-[#3c9c1c] text-white hover:bg-[#3c9c1c]/20">
                       Schedule Pickup
                     </Button>
                   </div>

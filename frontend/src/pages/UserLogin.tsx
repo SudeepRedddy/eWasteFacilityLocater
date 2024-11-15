@@ -55,7 +55,7 @@ const UserLogin = () => {
       <div className="max-w-md w-full space-y-8 bg-[#121212] p-8 rounded-xl shadow-lg">
         <div className="text-center">
           <div className="flex justify-center">
-            <User className="h-12 w-12 text-green-500" />
+            <User className="h-12 w-12 text-[#3c9c1c]" />
           </div>
           <h2 className="mt-4 text-3xl font-bold text-white">
             {isLogin ? 'Welcome Back' : 'Create Account'}
@@ -149,7 +149,7 @@ const UserLogin = () => {
               className="bg-[#121212] text-white placeholder-gray-500"
             />
 
-            <Button className="w-full bg-green-600 hover:bg-green-500" disabled={loading}>
+            <Button className="w-full bg-[#3c9c1c] hover:bg-[#3c9c1c]" disabled={loading}>
               {loading ? (
                 <Loader2 className="h-4 w-4 animate-spin mr-2" />
               ) : null}
@@ -162,7 +162,7 @@ const UserLogin = () => {
           <button
             type="button"
             onClick={() => setIsLogin(!isLogin)}
-            className="text-green-500 hover:text-green-400 text-sm font-medium"
+            className="text-[#3c9c1c]/80 hover:text-[#3c9c1c]/60 text-sm font-medium"
           >
             {isLogin ? "Don't have an account? Sign up" : 'Already have an account? Sign in'}
           </button>
