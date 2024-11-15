@@ -11,7 +11,7 @@ const Home = () => {
   const operationalCities = ['Mumbai', 'Pune', 'Bangalore', 'Hyderabad', 'Ahmedabad'];
 
   return (
-    <div className="space-y-20 font-sans bg-black text-gray-100">
+    <div className="font-sans bg-black text-gray-100">
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center">
         <video
@@ -102,7 +102,7 @@ const Home = () => {
       </section>
 
       {/* Sustainability Section */}
-      <section className="max-w-7xl mx-auto">
+      <section className="max-w-7xl mx-auto mb-7">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <img
@@ -134,6 +134,84 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Add the new Initiatives section right after Sustainability */}
+      <section className="max-w-6xl mx-auto px-10 py-10">
+        <div className="text-center mb-12">
+          <h2 className="text-5xl font-bold mb-4">Our Initiatives</h2>
+          <p className="text-gray-400">
+            Small steps towards <span className="text-[#3c9c1c]">sustainability</span>.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Tetra Pak Initiative */}
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+            <img
+              src="/path-to-tetra-pak-image.jpg"
+              alt="Tetra Pak Initiative"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-3">Tetra Pak Initiative</h3>
+              <p className="text-gray-400 text-sm">
+                The Kabadiwala collaborated with TetraPak India (World's Leading Beverage Carton Manufacturer) to increase the collection of used beverage cartons (UBC's) for recycling and diverting them from landfills.
+              </p>
+              <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
+                Learn more
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Mattress Circular Journey */}
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+            <img
+              src="/path-to-mattress-image.jpg"
+              alt="Mattress Circular Journey"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-3">Mattress Circular Journey</h3>
+              <p className="text-gray-400 text-sm">
+                ISPF, IPUA and The Kabadiwala came together to initiate India's first mattress recycling campaign which is named as 'Feko Nahi Recycle Karo'. The objective is to encourage the community to practise sustainable disposal of Mattress.
+              </p>
+              <Link to="/blog/mattress-journey" className="inline-flex items-center text-[#3c9c1c] mt-4">
+                Learn more
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Tree Plantation Initiative */}
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+            <img
+              src="/path-to-tree-plantation-image.jpg"
+              alt="Tree Plantation Initiative"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-3">Tree Plantation Initiative</h3>
+              <p className="text-gray-400 text-sm">
+                Since the last two years, The Kabadiwala has been following a tradition of planting trees on the occasion of Mahatma Gandhi's Birthday. In which, our customers also take part in our mission to turn Bhopal greener.
+              </p>
+              <Link to="/blog/tree-plantation" className="inline-flex items-center text-[#3c9c1c] mt-4">
+                Learn more
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Add the new Initiatives section right after Sustainability */}
+      <section className="max-w-6xl mx-auto px-10 py-10">
+        <div className="text-center mb-12">
+          <h2 className="text-5xl font-bold mb-4">Help</h2>
+          <p className="text-gray-400">
+            Way you could <span className="text-[#3c9c1c]">Reach Us</span>.
+          </p>
+        </div>
+        
+      </section>
       {/* How It Works */}
       <section className="max-w-7xl mx-auto px-4 py-6">
         <h2 className="text-3xl font-bold text-center mb-4 text-gray-100">How It Works</h2>
@@ -161,7 +239,7 @@ const Home = () => {
       </section>
 
       {/* Accepted Items */}
-      <section className="max-w-7xl mx-auto px-4">
+      <section className="max-w-7xl mx-auto px-4 py-6">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">Accepted Items</h2>
         <div className="grid md:grid-cols-4 gap-8 py-4">
           {[
@@ -183,20 +261,18 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-black">
+      <section className="bg-black py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4 text-gray-100">Ready to Start Recycling?</h2>
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
             Join our community and make a difference today!
           </p>
-          <Link to="/login">
-            <Button
-              size="lg"
-              className="bg-[#3c9c1c] text-gray-100 hover:bg-[#3c9c1c] transition-transform transform hover:scale-105 duration-300 ease-in-out shadow-lg"
-            >
-              Get Started Now
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+          <Link
+            to="/login"
+            className="inline-flex items-center bg-[#3c9c1c] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3c9c1c] transition-all duration-300"
+          >
+            Get Started Now
+            <ArrowRight className="ml-2 h-6 w-6" />
           </Link>
         </div>
       </section>
