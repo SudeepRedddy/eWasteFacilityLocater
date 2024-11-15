@@ -50,8 +50,8 @@ const Footer = () => {
                     <div>
                         <span>EcoRecycle</span>
                         <div className="space-y-2 text-gray-300 text-sm">
-                            <p>+91-99999 99999</p>
-                            <p>contact@ecorecycle.com</p>
+                            <p>+91 9985987193</p>
+                            <p>sudeepreddy0409@gmail.com</p>
                             <p>The EcoRecycle,Hyderabad </p>
                             {/* Social Links */}
                             <div className="flex space-x-4 pt-4">

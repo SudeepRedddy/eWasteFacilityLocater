@@ -148,13 +148,13 @@ const Home = () => {
           <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
             <img
               src="/path-to-tetra-pak-image.jpg"
-              alt="Tetra Pak Initiative"
+              alt="Know Your Waste"
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-3">Tetra Pak Initiative</h3>
-              <p className="text-gray-400 text-sm">
-                The Kabadiwala collaborated with TetraPak India (World's Leading Beverage Carton Manufacturer) to increase the collection of used beverage cartons (UBC's) for recycling and diverting them from landfills.
+              <p className="text-gray-400 text-sm text-justify">
+                Did you know? More than half of our household waste is kitchen waste, and the rest consists of dry & hazardous waste. Each waste type has to be segregated at source to enable its right disposal so that a circular economy can be formed. Click the button below to know about your waste.
               </p>
               <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
@@ -162,6 +162,7 @@ const Home = () => {
               </Link>
             </div>
           </div>
+
 
           {/* Mattress Circular Journey */}
           <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
@@ -185,15 +186,14 @@ const Home = () => {
           {/* Tree Plantation Initiative */}
           <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
             <img
-              src="/path-to-tree-plantation-image.jpg"
+              src="https://www.thekabadiwala.com/images/our-initiative/tree-plantation/children-tree-plantation.webp"
               alt="Tree Plantation Initiative"
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-3">Tree Plantation Initiative</h3>
               <p className="text-gray-400 text-sm">
-                Since the last two years, The Kabadiwala has been following a tradition of planting trees on the occasion of Mahatma Gandhi's Birthday. In which, our customers also take part in our mission to turn Bhopal greener.
-              </p>
+                In the next two years, let's commit to planting as many trees as possible to restore balance to our planet. Every tree planted contributes to cleaner air, improved biodiversity, and a healthier future. Together, we can make a lasting impact let's start today!              </p>
               <Link to="/blog/tree-plantation" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -211,17 +211,36 @@ const Home = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Tetra Pak Initiative */}
+          {/* Contact Us */}
           <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
             <img
-              src="/path-to-tetra-pak-image.jpg"
+              src="https://media.istockphoto.com/id/1448184041/vector/abstract-character-concept.jpg?s=612x612&w=0&k=20&c=6P1KMHQKIyvqa0ahiFn_kvRt_Hgkj-L5rUbEFu4PjtY="
               alt="Tetra Pak Initiative"
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3">Tetra Pak Initiative</h3>
-              <p className="text-gray-400 text-sm">
-                The Kabadiwala collaborated with TetraPak India (World's Leading Beverage Carton Manufacturer) to increase the collection of used beverage cartons (UBC's) for recycling and diverting them from landfills.
+              <h3 className="text-xl font-semibold mb-3">Contact Us</h3>
+              <p className="text-gray-400 text-sm text-justify">
+              For any inquiries, contact EcoRecycle via our website or customer support. We're here to assist with all your e-waste recycling needs, ensure a seamless experience, and support a greener future.              </p>
+              <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
+                Learn more
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Privacy Policy */}
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+            <img
+              src="https://cdni.iconscout.com/illustration/premium/thumb/woman-throwing-battery-into-recycle-bin-illustration-download-in-svg-png-gif-file-formats--garbage-disposal-ecology-conservation-industries-pack-industry-illustrations-3921107.png?f=webp"
+              alt="Privacy Policy"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-3">Privacy Policy</h3>
+              <p className="text-gray-400 text-sm text-justify">
+                EcoRecycle enables e-waste recycling while protecting your personal information. Our Privacy Policy applies to all services. By using EcoRecycle, you consent to this policy and agree to our terms.
+              <br />
               </p>
               <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
@@ -230,36 +249,17 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Tetra Pak Initiative */}
+          {/* Terms & Conditions */}
           <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
             <img
-              src="/path-to-tetra-pak-image.jpg"
-              alt="Tetra Pak Initiative"
+              src="https://www.skvewasterecycling.com/assets/img/terms.png"
+              alt="Terms & Conditions"
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3">Tetra Pak Initiative</h3>
-              <p className="text-gray-400 text-sm">
-                The Kabadiwala collaborated with TetraPak India (World's Leading Beverage Carton Manufacturer) to increase the collection of used beverage cartons (UBC's) for recycling and diverting them from landfills.
-              </p>
-              <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
-                Learn more
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Tetra Pak Initiative */}
-          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
-            <img
-              src="https://www.thekabadiwala.com/images/our-initiative/tree-plantation/children-tree-plantation.webp"
-              alt="Tetra Pak Initiative"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3">Tetra Pak Initiative</h3>
-              <p className="text-gray-400 text-sm">
-              In the next two years, let's commit to planting as many trees as possible to restore balance to our planet. Every tree planted contributes to cleaner air, improved biodiversity, and a healthier future. Together, we can make a lasting impact let's start today!              </p>
+              <h3 className="text-xl font-semibold mb-3">Terms & Conditions</h3>
+              <p className="text-gray-400 text-sm text-justify">
+                Please read the terms and condition carefully which is located on the website.The term will have an overriding effect. This agreement sets out the legally binding agreement between the user of the website and The EcoRecycle.</p>
               <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -267,7 +267,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        
+
       </section>
       {/* How It Works */}
       <section className="max-w-7xl mx-auto px-4 py-6">
