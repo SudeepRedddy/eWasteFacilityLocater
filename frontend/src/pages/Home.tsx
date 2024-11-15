@@ -137,24 +137,24 @@ const Home = () => {
       {/* Add the new Initiatives section right after Sustainability */}
       <section className="max-w-6xl mx-auto px-10 py-10">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold mb-4">Our Initiatives</h2>
+          <h2 className="text-5xl font-bold mb-4">Steps Towards Sustainability</h2>
           <p className="text-gray-400">
             Small steps towards <span className="text-[#3c9c1c]">sustainability</span>.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Tetra Pak Initiative */}
+          {/* Know Your Waste */}
           <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
             <img
-              src="/path-to-tetra-pak-image.jpg"
+              src="https://www.thekabadiwala.com/images/individual/plant.webp"
               alt="Know Your Waste"
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3">Tetra Pak Initiative</h3>
+              <h3 className="text-xl font-semibold mb-3">Know Your Waste</h3>
               <p className="text-gray-400 text-sm text-justify">
-                Did you know? More than half of our household waste is kitchen waste, and the rest consists of dry & hazardous waste. Each waste type has to be segregated at source to enable its right disposal so that a circular economy can be formed. Click the button below to know about your waste.
+                Each waste type has to be segregated at source to enable its right disposal so that a circular economy can be formed. Click the button below to know about your waste & also recycle the waste according to the norms.
               </p>
               <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
@@ -164,18 +164,19 @@ const Home = () => {
           </div>
 
 
-          {/* Mattress Circular Journey */}
+          {/* Scrap Collection */}
           <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
             <img
-              src="/path-to-mattress-image.jpg"
-              alt="Mattress Circular Journey"
+              src="https://img.freepik.com/free-vector/people-loading-garbage-into-truck-trash-pickup-with-recycling-sign-flat-vector-illustration-garbage-disposal-volunteering-trash-collection_74855-13197.jpg"
+              alt="Scrap Collection"
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3">Mattress Circular Journey</h3>
+              <h3 className="text-xl font-semibold mb-3">Scrap Collection</h3>
               <p className="text-gray-400 text-sm">
-                ISPF, IPUA and The Kabadiwala came together to initiate India's first mattress recycling campaign which is named as 'Feko Nahi Recycle Karo'. The objective is to encourage the community to practise sustainable disposal of Mattress.
-              </p>
+              Sell your scrap in just few clicks!<br></br>
+              In this evolving technological world, let your kabaad find a kabadiwala, ONLINE!
+              Raise a request from the comfort of your home with the website & shedule pickup.              </p>
               <Link to="/blog/mattress-journey" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -186,14 +187,14 @@ const Home = () => {
           {/* Tree Plantation Initiative */}
           <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
             <img
-              src="https://www.thekabadiwala.com/images/our-initiative/tree-plantation/children-tree-plantation.webp"
+              src="https://cbx-prod.b-cdn.net/COLOURBOX59244512.jpg?width=800&height=800&quality=70"
               alt="Tree Plantation Initiative"
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-3">Tree Plantation Initiative</h3>
               <p className="text-gray-400 text-sm">
-                In the next two years, let's commit to planting as many trees as possible to restore balance to our planet. Every tree planted contributes to cleaner air, improved biodiversity, and a healthier future. Together, we can make a lasting impact let's start today!              </p>
+                In the next two years, let's commit to planting as many trees as possible to restore balance to our planet. Every tree planted contributes to cleaner air. Together, we can make a lasting impact let's start today!              </p>
               <Link to="/blog/tree-plantation" className="inline-flex items-center text-[#3c9c1c] mt-4">
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4" />

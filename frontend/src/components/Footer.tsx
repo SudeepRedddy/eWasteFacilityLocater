@@ -8,11 +8,11 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
                     {/* Business Column */}
                     <div>
-                        <h3 className="text-[#3c9c1c] text-lg font-semibold mb-4">Businesses</h3>
+                        <h3 className="text-[#3c9c1c] text-lg font-semibold mb-4">Sustainability</h3>
                         <ul className="space-y-2">
-                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">EPR</Link></li>
-                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Circular Economy</Link></li>
-                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Paper Shredding</Link></li>
+                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Know your Waste</Link></li>
+                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Scrap Collection</Link></li>
+                            <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Tree Plantation Initiative</Link></li>
                         </ul>
                     </div>
 
@@ -41,8 +41,8 @@ const Footer = () => {
                         <h3 className="text-[#3c9c1c] text-lg font-semibold mb-4">Help</h3>
                         <ul className="space-y-2">
                         <li><Link to="/contact" className="text-gray-300 hover:text-[#3c9c1c]">Contact Us</Link></li>
-                        <li><Link to="" className="text-gray-300 hover:text-[#3c9c1c]">Privacy Policy</Link></li>
-                        <li><Link to="/" className="text-gray-300 hover:text-[#3c9c1c]">Terms & Conditions</Link></li>
+                        <li><Link to="/contact" className="text-gray-300 hover:text-[#3c9c1c]">Privacy Policy</Link></li>
+                        <li><Link to="/contact" className="text-gray-300 hover:text-[#3c9c1c]">Terms & Conditions</Link></li>
                         </ul>
                     </div>
 

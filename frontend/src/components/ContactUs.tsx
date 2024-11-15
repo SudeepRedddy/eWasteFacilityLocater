@@ -8,7 +8,7 @@ const ContactUs = () => {
             {/* Main Content */}
             <div className="flex-grow">
                 {/* Hero Section */}
-                <div className="bg-znic py-16">
+                <div className="bg-znic py-20">
                     <div className="container mx-auto px-4">
                         <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Contact Us</h1>
                         <p className="text-gray-400 text-center max-w-2xl mx-auto">
@@ -18,7 +18,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* Contact Information Cards */}
-                <div className="container mx-auto px-4 py-16">
+                <div className="container mx-auto px-4 ">
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Email Card */}
                         <div className="bg-[#1E1E1E] p-6 rounded-xl transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-emerald-900/20 cursor-pointer">
@@ -27,7 +27,7 @@ const ContactUs = () => {
                                     <Mail className="h-8 w-8 text-[#4CAF50]" />
                                 </div>
                                 <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-                                <p className="text-gray-400">sudeepreddy196@gmail.com</p>
+                                <p className="text-gray-400">sudeepreddy0409@gmail.com</p>
                                 <p className="text-gray-400">phaneeshmushetty@gmail.com</p>
                             </div>
                         </div>
