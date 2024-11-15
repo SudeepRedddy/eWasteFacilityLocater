@@ -202,13 +202,70 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* Add the new Initiatives section right after Sustainability */}
+      {/* Help */}
       <section className="max-w-6xl mx-auto px-10 py-10">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold mb-4">Help</h2>
           <p className="text-gray-400">
             Way you could <span className="text-[#3c9c1c]">Reach Us</span>.
           </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Tetra Pak Initiative */}
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+            <img
+              src="/path-to-tetra-pak-image.jpg"
+              alt="Tetra Pak Initiative"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-3">Tetra Pak Initiative</h3>
+              <p className="text-gray-400 text-sm">
+                The Kabadiwala collaborated with TetraPak India (World's Leading Beverage Carton Manufacturer) to increase the collection of used beverage cartons (UBC's) for recycling and diverting them from landfills.
+              </p>
+              <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
+                Learn more
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Tetra Pak Initiative */}
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+            <img
+              src="/path-to-tetra-pak-image.jpg"
+              alt="Tetra Pak Initiative"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-3">Tetra Pak Initiative</h3>
+              <p className="text-gray-400 text-sm">
+                The Kabadiwala collaborated with TetraPak India (World's Leading Beverage Carton Manufacturer) to increase the collection of used beverage cartons (UBC's) for recycling and diverting them from landfills.
+              </p>
+              <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
+                Learn more
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Tetra Pak Initiative */}
+          <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+            <img
+              src="https://www.thekabadiwala.com/images/our-initiative/tree-plantation/children-tree-plantation.webp"
+              alt="Tetra Pak Initiative"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-3">Tetra Pak Initiative</h3>
+              <p className="text-gray-400 text-sm">
+              In the next two years, let's commit to planting as many trees as possible to restore balance to our planet. Every tree planted contributes to cleaner air, improved biodiversity, and a healthier future. Together, we can make a lasting impact let's start today!              </p>
+              <Link to="/blog/tetra-pak" className="inline-flex items-center text-[#3c9c1c] mt-4">
+                Learn more
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
         </div>
         
       </section>
@@ -218,7 +275,7 @@ const Home = () => {
         <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
           Discover how easy it is to join our eco-friendly movement and start earning rewards.
         </p>
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { icon: Recycle, title: 'Schedule Pickup', desc: 'Choose a time for easy e-waste pickup.' },
             { icon: TrendingUp, title: 'Earn Points', desc: 'Earn rewards for every item recycled.' },

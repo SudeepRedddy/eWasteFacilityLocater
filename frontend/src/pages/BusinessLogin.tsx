@@ -73,7 +73,7 @@ const BusinessLogin = () => {
           <Button
             onClick={handleGoogleLogin}
             disabled={loading}
-            className="w-full bg-white hover:bg-gray-100 text-black font-semibold border border-gray-300"
+            className="w-full bg-white hover:bg-gray-100 text-zinc-900 font-semibold border border-gray-300"
           >
             <div className="flex items-center justify-center">
               <svg className="h-5 w-5 mr-2" viewBox="0 0 24 24">
