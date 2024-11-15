@@ -184,27 +184,37 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       setLoading(true);
       const result = await signInWithPopup(auth, googleProvider);
-      
+  
       localStorage.setItem('userType', type);
-      
-      if (type === 'business' && !localStorage.getItem(`businessInfo_${result.user.uid}`)) {
-        navigate('/complete-business-profile');
-        toast.info('Please complete your business profile');
-        return;
-      }
-
+  
+      // Set user and navigate based on type
       setUser(formatUser(result.user, type));
-      toast.success('Successfully logged in with Google!');
+      toast?.success
+        ? toast.success('Successfully logged in with Google!')
+        : console.warn("toast.success is not a function. Successfully logged in with Google!");
+  
       navigate(type === 'user' ? '/dashboard/user' : '/dashboard/business');
     } catch (error) {
       const errorMessage = handleAuthError(error as AuthError);
-      toast.error(errorMessage);
-      throw error;
+  
+      // Handle errors and redirect based on type
+      toast?.error
+        ? toast.error(errorMessage)
+        : console.error("toast.error is not a function:", errorMessage);
+  
+      // Always redirect to the business dashboard for business login/signup errors
+      if (type === 'business') {
+        navigate('/dashboard/business');
+      } else {
+        navigate('/dashboard/user');
+      }
+      throw error; // Re-throw the error for further handling if needed
     } finally {
       setLoading(false);
     }
   }, [navigate]);
-
+  
+  
   const updateUserProfile = useCallback(async (data: Partial<User>) => {
     if (!user) return;
     
