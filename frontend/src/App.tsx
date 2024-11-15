@@ -11,6 +11,7 @@ import BusinessLogin from './pages/BusinessLogin';
 import UserDashboard from './pages/UserDashboard';
 import BusinessDashboard from './pages/BusinessDashboard';
 import ProtectedRoute from './components/ProtectedRoute';
+import ContactUs from './components/ContactUs';
 
 function AppContent() {
   return (
@@ -22,6 +23,7 @@ function AppContent() {
         <Route path="/login" element={<LoginChoice />} />
         <Route path="/login/user" element={<UserLogin />} />
         <Route path="/login/business" element={<BusinessLogin />} />
+        <Route path="/contact" element={<ContactUs/>}/>
         <Route
           path="/dashboard/user"
           element={

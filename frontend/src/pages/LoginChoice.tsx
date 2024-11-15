@@ -35,6 +35,7 @@ const LoginChoice = () => {
           </Link>
         </div>
       </div>
+      
     </div>
   );
 };
