@@ -140,7 +140,7 @@ const BusinessLogin = () => {
           />
 
           <Button 
-            className="w-full bg-[#3c9c1c]/80 hover:bg-[#3c9c1c]/60 text-white" 
+            className="w-full bg-[#3c9c1c]/100 hover:bg-[#3c9c1c]/70 text-white" 
             disabled={loading}
           >
             {loading ? (
