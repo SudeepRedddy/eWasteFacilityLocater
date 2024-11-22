@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { MapPin, Clock, Star, ArrowRight } from 'lucide-react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from 'react-leaflet';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { Link } from 'react-router-dom';
+
 // Fix for default marker icon
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -104,7 +105,7 @@ const haversineDistance = (coords1: [number, number], coords2: [number, number])
 
 // Function to estimate travel time based on distance
 const estimateTravelTime = (distanceKm: number): number => {
-  const averageSpeedKmH = 30; // Average urban speed
+  const averageSpeedKmH = 10; // Average urban speed
   return Math.round((distanceKm / averageSpeedKmH) * 60); // Convert to minutes
 };
 
@@ -201,7 +202,7 @@ const Centers = () => {
             </div>
             <Button
               onClick={toggleView}
-              className="bg-[#3c9c1c] text-white hover:bg-[#3c9c1c]/90"
+              className="bg-[#3c9c1c]/80 text-white hover:bg-[#3c9c1c]/60"
             >
               {viewingAll ? 'Show Nearest' : 'View All'}
             </Button>
@@ -212,7 +213,7 @@ const Centers = () => {
       <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="bg-black rounded-lg shadow-md p-4 mb-6 border border-gray-700">
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="md:col-span-2">
+          <div className="md:col-span-2">
               <div className="bg-black rounded-lg shadow-md overflow-hidden h-[600px] border border-gray-700">
                 <MapContainer
                   center={userLocation}
@@ -223,6 +224,20 @@ const Centers = () => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   />
+                  {/* Add CircleMarker for user location */}
+                  {userLocation && (
+                    <CircleMarker 
+                      center={userLocation}
+                      pathOptions={{ 
+                        color: '#2196f3',
+                        fillColor: '#2196f3',
+                        fillOpacity: 0.7
+                      }}
+                      radius={8}
+                    >
+                      <Popup>Your Location</Popup>
+                    </CircleMarker>
+                  )}
                   {centers.map((center) => (
                     <Marker key={center.id} position={[center.lat, center.lng]}>
                       <Popup>

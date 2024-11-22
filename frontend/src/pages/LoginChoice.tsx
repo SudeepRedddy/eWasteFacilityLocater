@@ -4,7 +4,7 @@ import { User, Building2 } from 'lucide-react';
 
 const LoginChoice = () => {
   return (
-    <div className="h-screen pt-16 flex items-center justify-center bg-black overflow-hidden">
+    <div className="h-screen pt-16 flex items-center justify-center bg-[#121212] overflow-hidden">
       <div className="max-w-4xl w-full mx-4">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-200">Choose Your Account Type</h2>
         <div className="grid md:grid-cols-2 gap-8">
@@ -35,7 +35,6 @@ const LoginChoice = () => {
           </Link>
         </div>
       </div>
-      
     </div>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Award, Package, Clock, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
-import { getAuth } from 'firebase/auth'; // Make sure Firebase is set up correctly
 
 // Custom hook for number animation
 const useCountAnimation = (end, duration = 2000, start = 0) => {
@@ -53,16 +52,6 @@ const StatCard = ({ icon: Icon, title, value, color, onClick }) => {
 const UserDashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [redeemMessage, setRedeemMessage] = useState(null);
-  const [username, setUsername] = useState('');
-
-  // Fetch current user data from Firebase
-  useEffect(() => {
-    const auth = getAuth();
-    const currentUser = auth.currentUser;
-    if (currentUser) {
-      setUsername(currentUser.displayName || currentUser.email);
-    }
-  }, []);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => {
@@ -112,7 +101,7 @@ const UserDashboard = () => {
       <div className="bg-zinc-900 shadow">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <h1 className="text-3xl font-bold">Dashboard</h1>
-          <p className="mt-2 text-gray-400">Welcome back, {username || "Guest"}</p>
+          <p className="mt-2 text-gray-400">Welcome back, John Doe</p>
         </div>
       </div>
 

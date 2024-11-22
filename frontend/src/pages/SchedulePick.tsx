@@ -22,7 +22,7 @@ const SchedulePickup = () => {
             {/* Main Content */}
             <div className="flex-grow">
                 {/* Hero Section */}
-                <div className="bg-zinc-900 py-20">
+                <div className="bg-zinc-900 py-12">
                     <div className="container mx-auto px-4">
                         <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Schedule a Pickup</h1>
                         <p className="text-gray-400 text-center max-w-2xl mx-auto">
